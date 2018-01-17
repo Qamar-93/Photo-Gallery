@@ -19,10 +19,10 @@ var resultImage = document.getElementsByClassName('content')[0];
               var text="";
               for (i = 1; i <= length; i++) {
                 if (i===1) {
-                  text += `<a class="pageNo active" href="#" onclick="changePage(${i})" >${i}</a>`;
+                  text += `<a class="pageNo active" href="#" onclick="changePage(${i},this)" >${i}</a>`;
 
                 } if (i>1) {
-                  text += `<a class="pageNo" href="#" onclick="changePage(${i})" >${i}</a>`;
+                  text += `<a class="pageNo" href="#" onclick="changePage(${i},this)" >${i}</a>`;
 
                 }
               }
@@ -71,15 +71,14 @@ function getResult(searchValue , fn) {
   return out;
 }
 
-function changePage(i) {
+function changePage(i,page) {
     result=display.slice((i-1)*10, (i*10)-1);
     myString = result.reduce(function (acc, cur) {
       return acc+=`<img class="resultImg" src="${cur.image}" alt="${cur.title}">`;
     }, '');
       var removeAct = document.querySelector('.active');
       removeAct.classList.remove('active');
-    var pageNumber = document.getElementsByClassName('pageNo')[i-1];
-    pageNumber.classList.add('active');
+    page.classList.add('active');
     return resultImage.innerHTML=myString;
 }
 function overlay(src) {
