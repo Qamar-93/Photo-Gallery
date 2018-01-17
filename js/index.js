@@ -63,7 +63,6 @@ function getResult(searchValue , fn) {
       else {
         out.status=0;
       }
-      console.log(fn);
     fn(out);
     }
   };
@@ -80,7 +79,6 @@ function changePage(i) {
     for (i = 1; i <= length; i++) {
       var pageNumber = document.getElementsByClassName('pageNo')[i-1];
       pageNumber.classList.remove('active');
-      console.log('hahana',pageNumber);
     }
     event.target.classList.add('active');
     return resultImage.innerHTML=myString;
