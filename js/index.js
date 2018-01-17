@@ -74,7 +74,7 @@ function getResult(searchValue , fn) {
 function changePage(i,page) {
     result=display.slice((i-1)*10, (i*10)-1);
     myString = result.reduce(function (acc, cur) {
-      return acc+=`<img class="resultImg" src="${cur.image}" alt="${cur.title}">`;
+      return acc+=`<img class="resultImg" onclick="overlay('${cur.image}')"  src="${cur.image}" alt="${cur.title}">`;
     }, '');
       var removeAct = document.querySelector('.active');
       removeAct.classList.remove('active');
