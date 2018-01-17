@@ -76,10 +76,8 @@ function changePage(i) {
     myString = result.reduce(function (acc, cur) {
       return acc+=`<img class="resultImg" src="${cur.image}" alt="${cur.title}">`;
     }, '');
-    for (j = 1; j <= length; j++) {
-      var pageNumber = document.getElementsByClassName('pageNo')[j-1];
-      pageNumber.classList.remove('active');
-    }
+      var removeAct = document.querySelector('.active');
+      removeAct.classList.remove('active');
     var pageNumber = document.getElementsByClassName('pageNo')[i-1];
     pageNumber.classList.add('active');
     return resultImage.innerHTML=myString;
