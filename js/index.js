@@ -29,7 +29,7 @@ var resultImage = document.getElementsByClassName('content')[0];
               pages.innerHTML=text;
 
               display = search.images;
-              result= display.slice(1, 10);
+              result= display.slice(1, 11);
               myString = result.reduce(function (acc, cur) {
                 return acc+=`<img onclick="overlay('${cur.image}')" class="resultImg" src="${cur.image}" alt="${cur.title}">`;
               }, '');
@@ -72,7 +72,7 @@ function getResult(searchValue , fn) {
 }
 
 function changePage(i,page) {
-    result=display.slice((i-1)*10, (i*10)-1);
+    result=display.slice((i-1)*10, i*10);
     myString = result.reduce(function (acc, cur) {
       return acc+=`<img class="resultImg" onclick="overlay('${cur.image}')"  src="${cur.image}" alt="${cur.title}">`;
     }, '');
