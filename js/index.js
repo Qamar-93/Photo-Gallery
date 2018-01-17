@@ -19,10 +19,10 @@ var resultImage = document.getElementsByClassName('content')[0];
               var text="";
               for (i = 1; i <= length; i++) {
                 if (i===1) {
-                  text += `<a class="pageNo active" href="" onclick="changePage(${i})" >${i}</a>`;
+                  text += `<a class="pageNo active" href="#" onclick="changePage(${i})" >${i}</a>`;
 
                 } if (i>1) {
-                  text += `<a class="pageNo" href="" onclick="changePage(${i})" >${i}</a>`;
+                  text += `<a class="pageNo" href="#" onclick="changePage(${i})" >${i}</a>`;
 
                 }
               }
